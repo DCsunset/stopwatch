@@ -18,12 +18,12 @@ node stopwatch.js
 
 Key press event:
 
-* s: Stop
-* p: Pause
-* c: Continue or Start again
-* r: Reset
-* q: Quit
-* Ctrl-c: Quit
+* <kbd>s</kbd>: Split
+* <kbd>e</kbd>: Stop
+* <kbd>p</kbd>: Pause
+* <kbd>c</kbd>: Continue or Start again
+* <kbd>r</kbd>: Reset
+* <kbd>Enter</kbd>/<kbd>q</kbd>/<kbd>Ctrl</kbd>+<kbd>c</kbd>: Quit
 
 ## Dependencies
 

@@ -35,6 +35,8 @@ process.stdin.on('keypress', (str, key) => {
 			}
 			// else Quit
 		case 'q':
+		case 'enter':
+		case 'return':
 			// Quit
 			process.exit();
 			break;
@@ -46,9 +48,14 @@ process.stdin.on('keypress', (str, key) => {
 			// Reset
 			timer.reset();
 			break;
-		case 's':
-			// Stop
+		case 'e':
+			// End
 			timer.stop();
+			break;
+		case 's':
+			// Split
+			// Record current time and continue to run
+			process.stdout.write('\n');
 			break;
 		default:
 			break;
