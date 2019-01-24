@@ -23,7 +23,7 @@ Key press event:
 * <kbd>p</kbd>: Pause
 * <kbd>c</kbd>: Continue or Start again
 * <kbd>r</kbd>: Reset
-* <kbd>Enter</kbd>/<kbd>q</kbd>/<kbd>Ctrl</kbd>+<kbd>c</kbd>: Quit
+* <kbd>Enter</kbd>/<kbd>q</kbd>/<kbd>Ctrl</kbd>+<kbd>c</kbd>/<kbd>Ctrl</kbd>+<kbd>d</kbd>: Quit
 
 ## Dependencies
 
