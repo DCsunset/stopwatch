@@ -34,6 +34,9 @@ process.stdin.on('keypress', (str, key) => {
 				break;
 			}
 			// else Quit
+		case 'd':
+			if(!key.ctrl)
+				break;
 		case 'q':
 		case 'enter':
 		case 'return':
