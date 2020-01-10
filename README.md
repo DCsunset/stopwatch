@@ -1,5 +1,8 @@
 # Stopwatch
 
+[![npm (scoped)](https://img.shields.io/npm/v/@dcsunset/stopwatch)](https://www.npmjs.com/package/@dcsunset/stopwatch)
+[![GitHub](https://img.shields.io/github/license/dcsunset/stopwatch)](https://github.com/DCsunset/stopwatch)
+
 A simple command-line stopwatch using Node.js
 
 ## Install
