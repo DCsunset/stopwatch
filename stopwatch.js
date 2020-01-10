@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { Timer } = require('easytimer.js');
 const timer = new Timer();
 const readline = require('readline');
@@ -19,23 +21,21 @@ timer.addEventListener('secondTenthsUpdated', () => {
 });
 
 readline.emitKeypressEvents(process.stdin);
-if(process.stdin.isTTY)
+if (process.stdin.isTTY)
 	process.stdin.setRawMode(true);
 
 // Key press action captured
 process.stdin.on('keypress', (str, key) => {
-	switch(key.name)
-	{
+	switch (key.name) {
 		case 'c':
-			if(!key.ctrl)
-			{
+			if (!key.ctrl) {
 				// Start or Continue
 				timer.start(timerConfig);
 				break;
 			}
-			// else Quit
+		// else Quit
 		case 'd':
-			if(!key.ctrl)
+			if (!key.ctrl)
 				break;
 		case 'q':
 		case 'enter':

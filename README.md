@@ -4,16 +4,17 @@ A simple command-line stopwatch using Node.js
 
 ## Install
 
-Clone this repository and run the following command:
+```
+npm install @dcsunset/stopwatch -g
+```
 
-```
-npm install
-```
 
 ## Usage
 
+Run the command:
+
 ```
-node stopwatch.js
+stopwatch
 ```
 
 Key press event:
@@ -24,6 +25,16 @@ Key press event:
 * <kbd>c</kbd>: Continue or Start again
 * <kbd>r</kbd>: Reset
 * <kbd>Enter</kbd>/<kbd>q</kbd>/<kbd>Ctrl</kbd>+<kbd>c</kbd>/<kbd>Ctrl</kbd>+<kbd>d</kbd>: Quit
+
+
+## Test
+
+Clone this repository and run the following command:
+
+```
+npm install
+npm start
+```
 
 ## Dependencies
 
