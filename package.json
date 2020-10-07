@@ -4,7 +4,7 @@
   "description": "A simple command-line stopwatch",
   "main": "stopwatch.js",
   "dependencies": {
-    "easytimer.js": "^4.1.1",
+    "easytimer.js": "^4.3.0",
     "readline": "^1.3.0"
   },
   "devDependencies": {},
