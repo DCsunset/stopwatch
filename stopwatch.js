@@ -25,27 +25,29 @@ if (process.stdin.isTTY)
 	process.stdin.setRawMode(true);
 
 // Key press action captured
-process.stdin.on('keypress', (str, key) => {
+process.stdin.on('keypress', (_, key) => {
 	switch (key.name) {
 		case 'c':
-			if (!key.ctrl) {
-				// Start or Continue
-				timer.start(timerConfig);
-				break;
-			}
-		// else Quit
 		case 'd':
 			if (!key.ctrl)
 				break;
+			// else Quit
 		case 'q':
 		case 'enter':
 		case 'return':
 			// Quit
+			process.stdout.write("\n");
 			process.exit();
-			break;
 		case 'p':
-			// Pause
-			timer.pause();
+		case 'space':
+			if (timer.isRunning()) {
+				// Pause
+				timer.pause();
+			}
+			else {
+				// Resume
+				timer.start(timerConfig);
+			}
 			break;
 		case 'r':
 			// Reset
