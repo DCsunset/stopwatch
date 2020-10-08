@@ -4,20 +4,50 @@ const { Timer } = require('easytimer.js');
 const timer = new Timer();
 const readline = require('readline');
 
+function arrayToString(array) {
+	return array.map(v => `'${v}'`).join(', ')
+}
+
+const validPrecisions = ['hours', 'minutes', 'seconds', 'secondTenths'];
+
+const argv = require('yargs')
+	.usage("Usage: $0 [options]")
+	.option('precision', {
+		alias: 'p',
+		type: 'string',
+		description: `The precision of stopwatch. Accepted values: ${arrayToString(validPrecisions)}. (Default: 'seconds')`
+	})
+	.help('help')
+	.alias('help', 'h')
+	.argv
+
+if (argv.precision && !validPrecisions.includes(argv.precision)) {
+	console.error(`Invalid precision. Accepted values: ${arrayToString(validPrecisions)}`);
+	process.exit(1);
+}
+
+const precision = argv.precision || 'seconds';
+
 // Set precision
-const timerConfig = {
-	precision: 'secondTenths'
-};
+const timerConfig = { precision };
 timer.start(timerConfig);
 
-// Set time updated event
-timer.addEventListener('secondTenthsUpdated', () => {
+function printTime() {
 	const timeValue = timer.getTimeValues();
 	// Overwrite the previous line
 	readline.clearLine(process.stdout);
 	readline.cursorTo(process.stdout, 0, null);
 	// Write current time
-	process.stdout.write((timeValue.toString(['hours', 'minutes', 'seconds']) + '.' + timeValue.secondTenths));
+	process.stdout.write(timeValue.toString(
+		validPrecisions.slice(0, validPrecisions.indexOf(precision) + 1)
+	));
+}
+
+printTime();
+
+// Set time updated event
+timer.addEventListener(`${precision}Updated`, () => {
+	printTime();
 });
 
 readline.emitKeypressEvents(process.stdin);
