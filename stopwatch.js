@@ -80,8 +80,13 @@ process.stdin.on('keypress', (_, key) => {
 			}
 			break;
 		case 'r':
+			const isRunning = timer.isRunning();
 			// Reset
 			timer.reset();
+			if (!isRunning) {
+				timer.pause();
+			}
+			printTime();
 			break;
 		case 'e':
 			// End
