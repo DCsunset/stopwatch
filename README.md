@@ -24,8 +24,7 @@ Key press event:
 
 * <kbd>s</kbd>: Split
 * <kbd>e</kbd>: Stop
-* <kbd>p</kbd>: Pause
-* <kbd>c</kbd>: Continue or Start again
+* <kbd>p</kbd>, <kbd>space</kbd>: Pause or resume
 * <kbd>r</kbd>: Reset
 * <kbd>Enter</kbd>/<kbd>q</kbd>/<kbd>Ctrl</kbd>+<kbd>c</kbd>/<kbd>Ctrl</kbd>+<kbd>d</kbd>: Quit
 
